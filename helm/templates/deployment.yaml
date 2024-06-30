@@ -40,6 +40,13 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          env:
+            -  name: REDIS_HOST
+               value: 'redis'
+            -  name: CATALOGUE_HOST
+               value: 'catalogue'
+            -  name: CATALOGUE_PORT
+               value: '8080'
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:
