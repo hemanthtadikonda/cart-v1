@@ -9,7 +9,7 @@ pipeline {
         }
         stage('code test') {
            steps {
-               echooo 'code test'
+               echo 'code test'
            }
         }
         stage('code quality') {
